@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>红旅漫画</title>
+    <link rel="stylesheet" href="./lib/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="./less/bass.less">
+    <link rel="stylesheet/less" href="./less/index.less">
+</head>
+
+<body>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <div class="layout">
+        <!-- 导航栏连载模块开始 -->
+        <div class="serialize">
+            <div class="serialize-head">
+                <a href="javascript:void(0)">&lt;</a>
+                <span>连载漫画</span>
+            </div>
+            <!-- 连载模块模板 -->
+            <script type="text/html" id="serialize-template">
+                {{each}}
+                <section class="serialize-section clearfix">
+                    <div class="serialize-left pull-left">
+                        <a href="{{$value.url}}">
+                        <img src="{{$value.img}}" alt="">
+                    </a>
+                    </div>
+                    <div class="serialize-right pull-left">
+                        <a href="{{$value.url}}">{{$value.name}}</a>
+                        <span>{{$value.episode}}</span>
+                        <span>{{$value.updateTime}}</span>
+                        <span>下载次数：{{$value.downloadCount}}</span>
+                    </div>
+                </section>
+                {{/each}}
+            </script>
+        </div>
+        <!-- 导航栏连载模块结束 -->
+        <div id="main-box">
+            <!-- 页头开始 -->
+            <header class="header clearfix">
+                <a href="javascript:void(0)" class="pull-left">三</a>
+                <a href="javascript:void(0)" class="pull-right">🏐</a>
+                <span>红旅动漫</span>
+            </header>
+            <!-- 导航菜单栏开始 -->
+            <nav class="hong-nav">
+                <div>
+                    <a href="#">
+                    <img src="./images/logo.png" alt="">
+                </a>
+                </div>
+                <div class="clearfix">
+                    <a href="javasript:void(0)" class="pull-left">
+                     <span class="pull-left">连载动漫</span>
+                     <span class="pull-right">&gt;</span>
+                </a>
+                </div>
+                <div class="clearfix">
+                    <a href="./special.html" class="pull-left">
+                     <span class="pull-left">专题列表</span>
+                     <span class="pull-right">&gt;</span>
+                </a>
+                </div>
+                <div class="clearfix">
+                    <a href="javascript:void(0)" class="pull-left">
+                     <span class="pull-left">关于</span>
+                     <span class="pull-right">&gt;</span>
+                </a>
+                </div>
+            </nav>
+            <!-- 导航菜单栏结束 -->
+            <!-- 轮播图开始 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide">\
+                    <a href="#"><img src="'+ data[0].img + '" alt=""></a>\
+                </div> -->
+                </div>
+                <!--小圆点 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- 轮播图结束 -->
+            <!-- tab栏切换开始 -->
+            <div class="tab_box">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">新增连载</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">新增完结</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">推荐连载</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">推荐完结</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <!-- tab栏模板 -->
+                        <script type="text/html" id="tab-template">
+                            {{each}}
+                            <div>
+                                <a href="{{$value.url}}">
+                        <img src="{{$value.img}}" alt="">
+                        </a>
+                                <span>{{$value.update}}</span>
+                                <p>{{$value.name}}</p>
+                            </div>
+                            {{/each}}
+                        </script>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">2</div>
+                    <div role="tabpanel" class="tab-pane" id="messages">3</div>
+                    <div role="tabpanel" class="tab-pane" id="settings">4</div>
+                </div>
+
+            </div>
+            <!-- tab栏切换结束 -->
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+<script src="./lib/less/less.js"></script>
+<script src="./lib/swiper/swiper.jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/template/template-web.js"></script>
+<script src="./js/index.js"></script>

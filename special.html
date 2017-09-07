@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>红旅漫画</title>
+    <link rel="stylesheet" href="./lib/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="./less/bass.less">
+    <link rel="stylesheet/less" href="./less/special.less">
+</head>
+
+<body>
+    <div class="layout">
+        <header class="header">
+            <a href="./index.html">&lt;</a>
+            <span>专题列表</span>
+        </header>
+        <div class="main">
+            <script type="text/html" id="sepecial-template">
+                {{each}}
+                <div class="section">
+                    <a href="{{$value.url}}">
+                    <img src="{{$value.img}}" alt="">
+                </a>
+                    <p>{{$value.title}}</p>
+                </div>
+                {{/each}}
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+<script src="./lib/less/less.js"></script>
+<script src="./lib/swiper/swiper.jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/template/template-web.js"></script>
+<script src="./js/special.js"></script>
